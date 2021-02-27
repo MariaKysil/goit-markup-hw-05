@@ -15,6 +15,10 @@
   --section-background: #f5f4fa;
   --social-links: #afb1b8;
   --footer-social-links: rgba(255, 255, 255, 0.1);
+
+  /* animation */
+  --animation-duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -87,6 +91,20 @@ h6 {
 /* main site nav without navigation address */
 .site-nav .link.current {
   color: var(--accent-color);
+  position: relative;
+}
+
+.site-nav .link.current::after {
+  content: '';
+  display: block;
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .site-nav {
@@ -102,6 +120,8 @@ h6 {
   display: inline-block;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .site-nav > li:not(:last-child) {
@@ -141,6 +161,8 @@ h6 {
   font-style: normal;
 
   color: var(--primary-text-color);
+
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .nav-link:hover,
@@ -353,6 +375,9 @@ h6 {
   border-radius: 50%;
 
   color: var(--social-links);
+
+  transition: background-color var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function);
 }
 
 .social-link:hover,
@@ -414,6 +439,9 @@ h6 {
   border-radius: 4px;
 
   color: var(--social-links);
+
+  transition: background-color var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function);
 }
 
 .clients-link:hover,
@@ -456,6 +484,9 @@ h6 {
 
   color: var(--white-color);
   background: var(--footer-social-links);
+
+  transition: background-color var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function);
 }
 
 .footer-social:hover,
@@ -509,6 +540,8 @@ h6 {
   font-size: 14px;
   line-height: 1.9;
   letter-spacing: 0.03em;
+
+  transition: color var(--animation-duration) var(--timing-function);
 }
 
 .footer-address .link:hover,
@@ -558,6 +591,10 @@ img {
 
   color: var(--text-nav-title-color);
   background-color: var(--section-background);
+
+  transition: background-color var(--animation-duration) var(--timing-function),
+    color var(--animation-duration) var(--timing-function),
+    box-shadow var(--animation-duration) var(--timing-function);
 }
 
 .button:hover,
@@ -597,6 +634,8 @@ img {
   margin-left: 30px;
   margin-top: 30px;
   border: 1px solid #eeeeee;
+
+  transition: box-shadow var(--animation-duration) var(--timing-function);
 }
 
 .item:hover,
